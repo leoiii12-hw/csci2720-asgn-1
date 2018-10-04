@@ -1,0 +1,34 @@
+/*
+CHOI Man Kin
+1155077469
+*/
+@import url('https://fonts.googleapis.com/css?family=Charmonman');
+
+body {
+    font-family: 'Charmonman', cursive;
+}
+
+h1 {
+    font-size: 10vw;
+}
+
+a:hover {
+    color: hotpink;
+    font-size: 100px;
+}
+
+header {
+    background-image: url("imgs/header-bg.png");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
