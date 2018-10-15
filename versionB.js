@@ -4,7 +4,7 @@ CHOI Man Kin
 */
 $(function () {
     // 1. Fade in of page contents
-    $("#main").fadeIn(2000, function () {
+    $("#main").fadeIn(4000, function () {
         // Animation complete
     });
 
@@ -52,23 +52,23 @@ $(function () {
     // Invalidate window and document heights
     var windowHeight = $(window).height();
     var documentHeight = $(document).height();
-    $(window).resize(function () {
+    setInterval(function () {
         windowHeight = $(window).height();
         documentHeight = $(document).height();
-    });
+    }, 100);
 
     // Set progress bar
-    var setProgressBar = function () {
+    var setProgress = function () {
         var windowScrollTop = $(window).scrollTop();
 
         var percentage = (windowScrollTop / (documentHeight - windowHeight)) * 100;
         if (percentage < 0) percentage = 0;
         if (percentage > 100) percentage = 100;
 
-        $("#scroll-position-progress-bar").css("width", percentage + "%");
+        $("#scroll-position-progress-bar").css("transform", "translateX(-" + (100 - percentage) + "%");
     };
-    $(setProgressBar);
-    $(window).scroll(setProgressBar);
+    $(setProgress);
+    $(window).scroll(setProgress);
 
     // 6. Bonus
     var j = 0;
@@ -78,7 +78,7 @@ $(function () {
             j = 0;
         }
 
-        alert("When you click this button, it will change the whole theme.")
+        alert("Don't you think the website is too dark. When you click this button, it will be brighter. Be careful of your eyes.")
 
         $('link[rel=stylesheet][href*="bootswatch"]').remove();
         $('head').append('<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/' + themes[j++] + '/bootstrap.min.css">');
